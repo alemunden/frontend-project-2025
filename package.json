@@ -16,5 +16,9 @@
     "url": "https://github.com/alemunden/frontend-project-2025/issues"
   },
   "homepage": "https://github.com/alemunden/frontend-project-2025#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
 }
