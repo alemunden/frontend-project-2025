@@ -28,7 +28,8 @@ table {
 
 th, td {
     padding: 10px;
-   border: 1px solid black;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
 th {
