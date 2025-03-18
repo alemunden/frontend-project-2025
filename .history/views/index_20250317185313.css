@@ -19,24 +19,3 @@ h1 {
     text-align: center;
     color: #007bff;
 }
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background: #007bff;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background: #f2f2f2;
-}
