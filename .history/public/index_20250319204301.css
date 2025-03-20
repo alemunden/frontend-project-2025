@@ -69,17 +69,3 @@ button:hover, .btn:hover {
 .btn-danger:hover {
     background: #a71d2a;
 }
-
-.add-job {
-    display: block;
-    width: fit-content;
-    margin: 10px auto;
-    background: #28a745;
-    padding: 8px 12px;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.add-job:hover {
-    background: #218838;
-}
