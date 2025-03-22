@@ -1,0 +1,52 @@
+// const express = require('express');
+// const bcrypt = require('bcryptjs');
+// const pool = require('../models/db');
+// const router = express.Router();
+
+// router.post('/register', async (req, res) => {
+//     const { username, email, password } = req.body;
+//     const hashedPassword = await bcrypt.hash(password, 10);
+//     await pool.query('INSERT INTO users (username, email, password) VALUES ($1, $2, $3)', [username, email, hashedPassword]);
+//     res.redirect('/login');
+// });
+
+// module.exports = router;
+
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+
+    if (result.rows.length === 0) {
+        return res.status(400).send('User not found');
+    }
+
+    const user = result.rows[0];
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+        return res.status(400).send('Invalid credentials');
+    }
+
+    // Store user session (assuming express-session is installed)
+    req.session.user = user;
+    res.redirect('/');
+});
+
+const session = require('express-session');
+
+app.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: false
+}));
+
+function ensureAuthenticated(req, res, next) {
+    if (req.session.user) {
+        return next();
+    }
+    res.redirect('/login');
+}
+
+router.get('/dashboard', ensureAuthenticated, (req, res) => {
+    res.render('dashboard', { user: req.session.user });
+});
