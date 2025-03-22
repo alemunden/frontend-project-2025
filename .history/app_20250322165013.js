@@ -21,7 +21,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', async (req, res) => {
     try {
         const { rows } = await pool.query('SELECT * FROM applications ORDER BY id ASC');
-        res.render('landing', { applications: rows });
+        res.render('index', { applications: rows });
     } catch (err) {
         console.error(err);
         res.status(500).send('Error fetching applications');
