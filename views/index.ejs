@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Application Tracker</title>
     <link rel="stylesheet" href="/index.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/applications">Application Tracker</a></li>
+        </ul>
+    </nav>    
     <h1>Job Application Tracker</h1>
 
-    <!-- Buttons -->
     <button onclick="window.location.reload();">Refresh Data</button>
     <button onclick="addApplication()" class="add-btn">➕ Add New Job</button>
 
@@ -113,4 +122,4 @@
         }
     </script>
 </body>
-</html>
+</html> 
