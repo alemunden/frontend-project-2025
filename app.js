@@ -17,20 +17,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Home route to display applications
-app.get('/', async (req, res) => {
+// Home route (Landing Page)
+app.get('/', (req, res) => {
+    res.render('landing');
+});
+
+// Route to display applications in tracker
+app.get('/index', async (req, res) => {
     try {
         const { rows } = await pool.query('SELECT * FROM applications ORDER BY id ASC');
-        res.render('landing', { applications: rows });
+        res.render('index', { applications: rows });
     } catch (err) {
         console.error(err);
         res.status(500).send('Error fetching applications');
     }
 });
-
-app.get('/index', (req, res) => {
-    res.render('index'); // about.ejs must exist in your "views" folder
-  });
 
 // Route to delete an application
 app.delete('/applications/:id', async (req, res) => {
