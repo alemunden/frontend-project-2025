@@ -94,9 +94,3 @@ body {
         cursor: pointer;    
         transition: background 0.3s ease, transform 0.3s ease;
     }
-
-
-.cta-btn:hover {
-    background: #ff6f61;
-    transform: scale(1.05);
-}
