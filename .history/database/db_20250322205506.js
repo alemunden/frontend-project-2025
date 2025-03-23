@@ -47,9 +47,9 @@ const { Pool } = pg;
 const pool = new Pool({
   host: 'localhost',
   port: 5432,
-  database: 'job_tracker', // Make sure these values are correct
+  database: 'job tracker', // Make sure these values are correct
   user: 'postgres',
-  password: 'deimosIRL123!'
+  password: 'tham123'
 });
 
 pool.on('connect', () => {
