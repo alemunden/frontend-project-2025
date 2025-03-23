@@ -7,14 +7,14 @@ body {
     align-items: center;
     min-height: 100vh;
 
-
-    background-color: #f5f7fa; 
+    /* Soft Clean Background */
+    background-color: #f5f7fa; /* Light neutral background */
 }
 
-
+/* 🏠 Navbar Styling */
 nav {
     width: 100%;
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(255, 255, 255, 0.9); /* Light semi-transparent navbar */
     backdrop-filter: blur(8px);
     padding: 15px 0;
     text-align: center;
@@ -52,6 +52,7 @@ nav ul li a:hover {
     color: white;
 }
 
+/* 🔥 Page Header */
 h1 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2.8rem;
@@ -60,6 +61,7 @@ h1 {
     margin-top: 120px;
 }
 
+/* 📋 Application Tracker Container */
 .container {
     background: white;
     padding: 25px;
@@ -71,6 +73,7 @@ h1 {
     margin-top: 20px;
 }
 
+/* 🏆 Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -101,6 +104,7 @@ tr:hover {
     transition: 0.3s ease;
 }
 
+/* 🎯 Action Buttons */
 button {
     font-size: 1rem;
     padding: 10px 15px;
@@ -141,6 +145,7 @@ button {
     transform: scale(1.05);
 }
 
+/* 🔄 Refresh Button */
 button[onclick="window.location.reload();"] {
     background: #3498db;
     color: white;
@@ -151,6 +156,7 @@ button[onclick="window.location.reload();"]:hover {
     transform: scale(1.05);
 }
 
+/* 📱 Mobile Responsiveness */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.2rem;
