@@ -29,7 +29,13 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/index', (req, res) => {
-    res.render('index'); // about.ejs must exist in your "views" folder
+    try {
+        const { rows } = await pool.query('SELECT * FROM applications ORDER BY id ASC');
+        res.render('index', { applications: rows });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error fetching applications');
+    }
   });
 
 // Route to delete an application
